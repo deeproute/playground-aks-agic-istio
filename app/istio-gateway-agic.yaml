@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: gateway-agic
+  namespace: istio-ingress
+spec:
+  selector:
+    app: istio-gateway-agic
+    istio: gateway-agic
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - '*'

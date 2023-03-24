@@ -1,4 +1,4 @@
-# AKS with Azure Application Gateway with Istio Ingress
+# AKS with Azure Application Gateway (With AGIC) traffic forwarded to Istio Ingress
 ## Setup
 
 ### Deploy
@@ -13,7 +13,7 @@ terraform apply
 ### Deploy Istio
 
 Follow the official documentation on installing istio. Make sure you install the `istio gateway` so you can configure the Istio's services to link the AGIC Ingress to.
-The Istio service can be a `ClusterIP` since its not going to be accessed outside the cluster. The way App GW connects is by the pod ips directly and not by the service itself. You can verify this when you open the backend pools in Azure Portal after AGIC Add-on is enabled in the AKS Cluster.
+The Istio service can be a `ClusterIP` since its not going to be accessed outside the cluster. The way App GW connects is by the pod ips directly and not by the service itself. You can verify this when you open the backend pools in Azure Portal after AGIC Add-on is enabled in the AKS Cluster and created all resources mentioned below.
 
 ### Deploy a sample app
 
